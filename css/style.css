@@ -140,9 +140,10 @@ a:hover {
 vid border
 ===========================*/
 .vid-border{
-
-	border: 10px solid black
-	border-radius: 5px;
+	
+	border-left: 14px solid black;
+	border-right: 14px solid black;
+	
 }
 /*===========================
 vid background
