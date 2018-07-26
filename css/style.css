@@ -643,7 +643,8 @@ textarea#message{
   Footer
 ============================ */
 footer {
-	padding:50px;
+	padding:100px;
+	margin-left: 15px;
 	background:#65AAF0;
 }
 
@@ -781,7 +782,8 @@ ul.social-network li a {
 }
 
 .copyright {
-	margin-top:30px;
+	margin-top:20px;
+	margin-bottom:20px;
 }
 
 .copyright a {
