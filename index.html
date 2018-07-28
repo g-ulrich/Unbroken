@@ -76,9 +76,9 @@
 				<a title="Click to be taken to exodus 20 :)" target="_blank" href="https://www.biblegateway.com/passage/?search=Exodus+20%3A1-21&version=NIV"> 
 				<font size="4"><b>The ten Commandments:</b></font></a>
 				</br>
-				<font size="5"><span class="blinking"><i  class="fas fa-hand-point-right"></i></span></font> Click each commandment for more information.
+				<font size="5"><i  class="fas fa-hand-point-right"></i></font> Click each commandment for more information.
 				</br>
-				<font size="5"><span class="blinking"><i  class="fas fa-hand-point-right"></i></span></font> Click the darkened text for a defintion. 
+				<font size="5"><i  class="fas fa-hand-point-right"></i></font> Click the darkened text for a defintion. 
 					<br/>
 					<br/>
 					<ol>
@@ -128,20 +128,32 @@
 							<span class="bs"><i class="fas fa-skull"></i> Deadly</span> World Statistics</b> </p>
 						</br>
 						</br>	
-							<ul>
-								<li> Every minute <b><span class="counter" data-count="105">0</span></b> people die.</li>
-								<br/>
-								<li> Every hour <b><span class="counter" data-count="6316">0</span></b> people die.</li>
-								<br/>
-								<li> Every day <b><span class="counter" data-count="151600">0</span></b> people die.</li>
-								<br/>
-								<li>Every month <b><span class="counter" data-count="4608333">0</span></b> people die.</li>
-								<br/>
-								<li>Every year <b><span class="counter" data-count="55300000">0</span></b> people die.</li>
+							
+								 Every minute <b><span class="counter" data-count="105">0</span></b> people die.
 								<br/>
 								<br/>
-								<li><b> 10 out of 10 people die, and you will too.</b></li>
-							</ul>
+								 Every hour <b><span class="counter" data-count="6316">0</span></b> people die.
+								<br/>
+								<br/>
+								 Every day <b><span class="counter" data-count="151600">0</span></b> people die.
+								<br/>
+								<br/>
+								Every month <b><span class="counter" data-count="4608333">0</span></b> people die.
+								<br/>
+								<br/>
+								Every year <b><span class="counter" data-count="55300000">0</span></b> people die.
+								<br/>
+								<br/>
+								<br/>
+								<div >
+								 This is how many people died since you loaded this website: <br/><br/>
+									<b><span class="yearCount" data-count="55300000">0</span></b>
+								</div>
+								<br/>
+								<br/>
+								<br/>
+								<b> 10 out of 10 people die, and you will too.</b>
+							
 							</font>
 							<br/>
 							<br/>
@@ -221,6 +233,32 @@
 	</script>	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script>
+	$('.yearCount').each(function() {
+    var $this = $(this),
+      countTo = $this.attr('data-count');
+
+    $({
+      countNum: $this.text()
+    }).animate({
+        countNum: countTo
+      },
+
+      {
+
+        duration: 31557600,
+        easing: 'linear',
+        step: function() {
+          $this.text(Math.floor(this.countNum));
+        },
+        complete: function() {
+          $this.text(this.countNum);
+        }
+
+      });
+
+});
+	</script>
+	<script>
 		$('.counter').each(function() {
     var $this = $(this),
       countTo = $this.attr('data-count');
@@ -233,7 +271,7 @@
 
       {
 
-        duration: 100000,
+        duration: 10000,
         easing: 'linear',
         step: function() {
           $this.text(Math.floor(this.countNum));
