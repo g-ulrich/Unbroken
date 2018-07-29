@@ -176,41 +176,45 @@
 			</font>
 		</p></br><br/>
 				<hr/>
-				
 					<center>
 						<br/>
-						
-						
 							<p><b><font size="6">
 							<span class="bs"><i class="fas fa-skull"></i> Deadly</span> World Statistics</b> </p></font>
 						</br>
-						</br>	
+						</br>
+						
 							<font size="5">
-								 Every minute <b><span class="counter" data-count="105">0</span></b> people die.
+							<div id="counter">
+							<b>Number Of Deaths</b>
+							<br/>
+							<br/>
+								 Every minute <br/><b><span class="counter-value" data-count="105">0</span></b>
 								<br/>
 								<br/>
-								 Every hour <b><span class="counter" data-count="6316">0</span></b> people die.
+								 Every hour <br/><b><span class="counter-value" data-count="6316">0</span></b>
 								<br/>
 								<br/>
-								 Every day <b><span class="counter" data-count="151600">0</span></b> people die.
+								 Every day <br/><b><span class="counter-value" data-count="151600">0</span></b>
 								<br/>
 								<br/>
-								Every month <b><span class="counter" data-count="4608333">0</span></b> people die.
+								Every month <br/><b><span class="counter-value" data-count="4608333">0</span></b>
 								<br/>
 								<br/>
-								Every year <b><span class="counter" data-count="55300000">0</span></b> people die.
+								Every year <br/><b><span class="counter-value" data-count="55300000">0</span></b>
+								</div>
 								<br/>
 								<br/>
 								<br/>
 								<div >
 								  Number of people that died since you loaded this website: <br/><br/>
-									<font size="8" color="#EE0000"><b><span class="yearCount" data-count="55300000">0</span></b></font>
+								<font size="8" color="#EE0000"><b><span class="yearCount" data-count="55300000">0</span></b>
+								</font>
 								</div>
 								<br/>
 								<br/>
 								<br/>
 								</font>
-								<font size="6"><b> 10 out of 10 people die, and you will too. <br/><br/>
+							<font size="6"><b> 10 out of 10 people die, and you will too. <br/><br/>
 								Repent and trust in Jesus Christ today.</b></font>
 							
 							
@@ -223,11 +227,9 @@
 	<div class="sub-footer">
 		<div class="container">			
 				<div class="copyright">
-					<p>&copy; <b>UNBROKEN</b> 2018 All Rights Reserved.</p>
+					<p>&copy; <b>UNBROKEN</b> 2018 All Rights Reserved.<br/> Call me:</b> (717) 571-7573</p>
 				</div>
-                <div class="phonenumber">
-				<p ><b>Call me:</b> (717) 571-7573
-				</div>
+                
 					
 		</div>				
 	</div>
@@ -280,7 +282,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>	
 	<script src="js/wow.min.js"></script>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-countto/1.2.0/jquery.countTo.js"></script>
 	<script>
 	wow = new WOW(
 	 {
@@ -288,8 +291,61 @@
 		}	) 
 		.init();
 	</script>	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script>
+	var a = 0;
+	$(window).scroll(function() {
+
+	var oTop = $('#counter').offset().top - window.innerHeight;
+	if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.counter-value').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
+
+        {
+
+          duration: 10000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+		});
+		a = 1;
+	}
+
+	});
+	</script>
+	<script>
+	/*Appear than count function*/
+	function isScrolledIntoView(el) {
+	var elemTop = el.getBoundingClientRect().top;
+	var elemBottom = el.getBoundingClientRect().bottom;
+
+	var isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+	return isVisible;
+	}
+
+	$(window).on('scroll', function() {
+	if (isScrolledIntoView(document.getElementById('counters'))) {
+    $('.ace-counter-number').countTo();
+
+    // Unbind scroll event
+    $(window).off('scroll');
+	}
+	});
+	</script>
+	<script>
+	/*countyear automatically */
 	$('.yearCount').each(function() {
     var $this = $(this),
       countTo = $this.attr('data-count');
@@ -313,33 +369,7 @@
 
       });
 
-});
-	</script>
-	<script>
-		$('.counter').each(function() {
-    var $this = $(this),
-      countTo = $this.attr('data-count');
-
-    $({
-      countNum: $this.text()
-    }).animate({
-        countNum: countTo
-      },
-
-      {
-
-        duration: 100000,
-        easing: 'linear',
-        step: function() {
-          $this.text(Math.floor(this.countNum));
-        },
-        complete: function() {
-          $this.text(this.countNum);
-        }
-
-      });
-
-});
+	});
 	</script>
 	</div>
   </body>
