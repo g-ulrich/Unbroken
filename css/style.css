@@ -645,20 +645,14 @@ textarea#message{
 ============================ */
 /*ten commandments
 */
-#border {
-    box-sizing: content-box;    
-    width: 300px;
-    height: 100px;
-    padding: 20px;    
-    border: 2px solid white;
-}
+
 .bs{
-    animation:blinkingText 1.8s infinite;
+    animation:blinkingText 1.5s infinite;
 }
 @keyframes blinkingText{
     
     0%{    color: white;  }
-    50%{   color: red;    }
+    50%{   color: #EE0000;    }
 }
 
 
@@ -773,36 +767,14 @@ ul.social-network li {
 	font-size:25px;	
 	margin-left:-10px;
 }
-
-ul.social-network li a {
-	color:#d0d0d0;	
-}
-.social-network li:hover .fa-twitter {
-  color: #00abf0;
-}
-.social-network li:hover .fa-facebook {
-  color: #39579a;
-}
-.social-network li:hover .fa-google-plus {
-  color: #eb8984;
-}
-.social-network li:hover .fa-pinterest {
-  color: #c9171e; 
-}
-.social-network li:hover .fa-linkedin {
-  color: #0077b5; 
-}
-.social-network li:hover .fa-youtube-play {
-  color: #C84941; 
-}
-.social-network li:hover .fa-dribbble {
-  color: #EA4C89 ; 
-}
-.social-network li:hover .fa-pinterest-square {
-  color: #EA4B49; 
+.phonenumber {
+	float: right;
+	margin-top:20px;
+	margin-bottom:20px;
 }
 
 .copyright {
+	float: left;
 	margin-top:20px;
 	margin-bottom:20px;
 }
