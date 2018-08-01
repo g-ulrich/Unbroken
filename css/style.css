@@ -4,8 +4,6 @@
 /* ==== overwrite bootstrap standard ==== */
 @import url('animate.css');
 
-
-
 body {
 	font-family:'Open Sans', Arial, sans-serif;
 	font-size:14px;
@@ -67,11 +65,22 @@ a:hover {
    	 -o-transition: all 0.1s ease-in-out;
    	 
 	color:#272727;
+	position: absolute;
+   	 left: 45px;
+	margin-top:150px;
+	width: 270px;
+	height: 687px;
 }
 
 ol {
-	text-shadow: -0.3em 0.1em 0.1em gray;
+	text-shadow: -0.1em -0.1em 0.02em gray;
+	text-align: left;
 }
+
+.sep {
+	line-height: 30px;
+}
+
 
 	
 /*===========================
@@ -678,6 +687,21 @@ textarea#message{
     
 }
 
+#containerImg {
+margin-left: -40px;
+  height: 730px;
+  width: 322px;
+  position: relative;
+}
+#image {
+  position: absolute;
+  left: 0;
+  top: 0;
+height: 730px;
+}
+#text {
+ 
+}
 
 
 footer {
