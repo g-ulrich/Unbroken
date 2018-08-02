@@ -75,6 +75,7 @@ a:hover {
 ol {
 	text-shadow: -0.1em -0.1em 0.02em gray;
 	text-align: left;
+	
 }
 
 .sep {
@@ -686,6 +687,8 @@ textarea#message{
     50%{    color: white; }
     
 }
+
+
 
 #containerImg {
 margin-left: -40px;
