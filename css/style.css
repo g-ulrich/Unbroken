@@ -230,7 +230,15 @@ vid background
 
 .shipsand {
 	position: absolute;
-		bottom: -100px;
+		bottom: 0px;
+		hieght: auto;
+		width: 100%;
+		z-index: 1;
+		left: 0;
+}
+.sand {
+	position: absolute;
+		top: -200;
 		hieght: auto;
 		width: 100%;
 		z-index: 1;
