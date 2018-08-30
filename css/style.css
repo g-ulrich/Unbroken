@@ -215,6 +215,7 @@ vid background
 ============================*/
 .bg {
 	background-color: #65AAF0;
+	overflow-x: hidden;
 }
 
 
@@ -229,7 +230,7 @@ vid background
 
 .shipsand {
 	position: absolute;
-		bottom: -60px;
+		bottom: -100px;
 		hieght: auto;
 		width: 100%;
 		z-index: 1;
