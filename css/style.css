@@ -223,8 +223,8 @@ vid background
 	position: relative;
 	margin-top: -20px;
 	
-	height: 770px;
-	overflow:hidden;
+	height: 1100px;
+	
 	background-color: rgb(0,50,150);
 }
 
@@ -237,7 +237,7 @@ vid background
 		left: 0;
 }
 .sand {
-	position: absolute;
+	position: relative;
 		bottom: 0px;
 		hieght: auto;
 		width: 100%;
